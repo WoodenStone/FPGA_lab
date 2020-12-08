@@ -1,0 +1,87 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2020/11/18 15:31:20
+// Design Name: 
+// Module Name: Moore
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module Moore(rst_n_i,clk_i,set_i,data_i,detect_o);
+    input rst_n_i;
+    input clk_i;
+    input set_i;
+    input [7:0] data_i;
+    output reg detect_o;
+    
+    reg [4:0] curstate;
+    reg [4:0] nextstate;
+    reg [2:0] count=3'd7;
+    reg z=1'b0;
+    
+    parameter s0 = 5'b00000,
+                s1 = 5'b00001,
+                s2 = 5'b00010,
+                s3 = 5'b00100,
+                s4 = 5'b01000,
+                s5 = 5'b10000;
+    initial begin
+        curstate<=s0;
+        detect_o<=1'b0;
+    end
+    
+    always@(posedge clk_i or posedge set_i or negedge rst_n_i)
+    begin
+        if(rst_n_i==0) curstate<=s0;
+        else begin
+            curstate<=nextstate;
+            if(set_i==0) begin
+                count<=3'd7;
+                curstate<=s0;
+            end
+            else begin
+                if(count>3'd0) count<=count-1;
+                else count<=3'd0;
+            end
+        end
+    end
+    
+    always @(posedge z or posedge set_i or posedge rst_n_i)
+    begin
+        if(rst_n_i==0||set_i==0) detect_o<=1'd0;
+        else if(z==1'd1) detect_o<=1'd1;
+    end
+    
+    always@(curstate or count)
+    begin
+        case(curstate)
+        s0: nextstate=(data_i[count]==1)?s0:s1;
+        s1: nextstate=(data_i[count]==1)?s2:s1;
+        s2: nextstate=(data_i[count]==0)?s3:s0;
+        s3: nextstate=(data_i[count]==1)?s4:s1;
+        s4: nextstate=(data_i[count]==1)?s5:s3;
+        s5: nextstate=(data_i[count]==0)?s0:s1;
+        endcase
+    end
+    
+    always@(curstate)
+    begin
+        case(curstate) 
+            s5:z<=1'd1;
+            default z<=1'd0;
+        endcase
+    end
+endmodule
