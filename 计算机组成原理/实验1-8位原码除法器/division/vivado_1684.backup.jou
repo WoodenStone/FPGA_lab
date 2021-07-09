@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat May 15 16:31:15 2021
+# Process ID: 1684
+# Current directory: C:/Users/Administrator/Desktop/division
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4620 C:\Users\Administrator\Desktop\division\division.xpr
+# Log file: C:/Users/Administrator/Desktop/division/vivado.log
+# Journal file: C:/Users/Administrator/Desktop/division\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/Desktop/division/division.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_simulation
+source division.tcl
+relaunch_sim
+close_sim
+launch_simulation
+source division.tcl
+close_sim
+launch_simulation
+source division.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_sim [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source top_sim.tcl
+relaunch_sim
+run 5000 us
+relaunch_sim
+run 3999 us
+relaunch_sim
+run 3600 us
+relaunch_sim
+run 3600 us
+close_sim
+close_sim

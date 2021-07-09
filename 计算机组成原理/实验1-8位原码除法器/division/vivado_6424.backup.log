@@ -1,0 +1,108 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat May 15 10:02:50 2021
+# Process ID: 6424
+# Current directory: C:/Users/Administrator/Desktop/division
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11284 C:\Users\Administrator\Desktop\division\division.xpr
+# Log file: C:/Users/Administrator/Desktop/division/vivado.log
+# Journal file: C:/Users/Administrator/Desktop/division\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/Desktop/division/division.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+update_compile_order -fileset sources_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat May 15 10:03:23 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Administrator/Desktop/division/division.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn1" may be locked by another hw_server.
+refresh_hw_server {localhost:3121}
+WARNING: [Labtoolstcl 44-27] No hardware targets exist on the server [localhost:3121]
+Check to make sure the cable targets connected to this machine are properly connected
+and powered up, then use the refresh_hw_server command to re-register the hardware targets.
+refresh_hw_server {localhost:3121}
+WARNING: [Labtoolstcl 44-27] No hardware targets exist on the server [localhost:3121]
+Check to make sure the cable targets connected to this machine are properly connected
+and powered up, then use the refresh_hw_server command to re-register the hardware targets.
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:III:3121
+ERROR: [Labtools 27-2223] Unable to connect to hw_server with URL "TCP:III:3121".
+Resolution: 1. Check the host name, port number and network connectivity.
+2. Check to ensure the hw_server is running on the target.
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:III:3121
+ERROR: [Labtools 27-2223] Unable to connect to hw_server with URL "TCP:III:3121".
+Resolution: 1. Check the host name, port number and network connectivity.
+2. Check to ensure the hw_server is running on the target.
+ERROR: [Common 17-39] 'connect_hw_server' failed due to earlier errors.
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+refresh_hw_target {localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001}
+close_hw_target {localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001}
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001
+refresh_hw_server {localhost:3121}
+open_hw_target {localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001}
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1734.477 ; gain = 3.387
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/Port_#0006.Hub_#0001
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1916.387 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Sat May 15 10:35:13 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Administrator/Desktop/division/division.runs/synth_1/runme.log
+[Sat May 15 10:35:13 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Administrator/Desktop/division/division.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1916.387 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat May 15 10:39:18 2021...

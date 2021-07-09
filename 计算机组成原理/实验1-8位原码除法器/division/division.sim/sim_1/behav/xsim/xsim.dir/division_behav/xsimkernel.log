@@ -1,0 +1,7 @@
+Running: xsim.dir/division_behav/xsimk.exe -simmode gui -wdb division_behav.wdb -simrunnum 0 -socket 59058
+Design successfully loaded
+Design Loading Memory Usage: 5252 KB (Peak: 5252 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 5968 KB (Peak: 5968 KB)
+Simulation CPU Usage: 0 ms

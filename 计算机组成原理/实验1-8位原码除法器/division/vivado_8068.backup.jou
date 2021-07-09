@@ -1,0 +1,133 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat May 15 15:12:45 2021
+# Process ID: 8068
+# Current directory: C:/Users/Administrator/Desktop/division
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4740 C:\Users\Administrator\Desktop\division\division.xpr
+# Log file: C:/Users/Administrator/Desktop/division/vivado.log
+# Journal file: C:/Users/Administrator/Desktop/division\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Administrator/Desktop/division/division.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_hw
+connect_hw_server
+refresh_hw_server {localhost:3121}
+disconnect_hw_server localhost:3121
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Administrator/Desktop/division/division.runs/impl_1/division.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+launch_simulation
+source top_sim.tcl
+run 500 ns
+run 500 ns
+current_wave_config {Untitled 1}
+add_wave {{/top_sim/u_top_sim/u_div_as/quotient}} 
+current_wave_config {Untitled 1}
+add_wave {{/top_sim/u_top_sim/u_div_rr/quotient}} 
+relaunch_sim
+run 500 ns
+current_wave_config {Untitled 1}
+add_wave {{/top_sim/u_top_sim/u_div_as/recurrent}} 
+relaunch_sim
+run 500 ns
+close_hw
+close_sim
+launch_simulation
+source top_sim.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+run 50 us
+relaunch_sim
+run 1 ms
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 50 ns
+run 500 ns
+run 50 us
+relaunch_sim
+run 1 ms
+run 500 us
+relaunch_sim
+run 1500 us
+relaunch_sim
+run 1200 us
+relaunch_sim
+run 1200 us
+relaunch_sim
+run 1200 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 1200 us
+run 1200 us
+run 1200 us
+run 1200 us
+run 1200 us
+run 1200 us
+run 1200 us
+run 1200 us
+run 1200 us
+run 5000 us
+run 5000 us
+run 5000 us
+relaunch_sim
+run 1200 us
+run 1200 us
+run 1200 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+run 5000 us
+relaunch_sim
+run 5000 us
+close_sim
